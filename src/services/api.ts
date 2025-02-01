@@ -1,13 +1,14 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { Produto } from '../App'
 
 const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://fake-api-tau.vercel.app/api'
   }),
-  tagTypes: ['Produtos'], // Adiciona suporte a cache
+  tagTypes: ['Produtos'],
   endpoints: (builder) => ({
-    getProdutos: builder.query({
+    getProdutos: builder.query<Produto[], void>({
       query: () => '/ebac_sports',
       providesTags: ['Produtos']
     })

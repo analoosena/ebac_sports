@@ -1,12 +1,7 @@
-// import { Produto as ProdutoType } from '../App'
 import Produto from '../components/Produto'
 import { useGetProdutosQuery } from '../services/api'
 
 import * as S from './styles'
-
-// type Props = {
-//   produtos: ProdutoType[]
-// }
 
 const ProdutosComponent = () => {
   const { data: produtos, error, isLoading } = useGetProdutosQuery()
